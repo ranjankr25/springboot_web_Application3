@@ -1,0 +1,67 @@
+package com.springrest.springrest.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springrest.springrest.dao.CourseDao;
+import com.springrest.springrest.entities.course;
+
+@Service
+public class CourseServiceImpl implements CourseService {
+	@Autowired
+	private CourseDao curseDao;
+	//List<course>list;
+	public CourseServiceImpl() {
+	//	list = new ArrayList<>();
+	//	list.add(new course((long) 145,"java prigram","this is java course"));
+	//	list.add(new course((long) 4343,"spring prigram","this is spring course"));
+	}
+
+	@Override
+	public List<course> getCourses() {
+	return CourseDao.findAll();
+	}
+
+	@Override
+	public course getCourse(long courseId) {
+		//course c=null;
+		//for(com.springrest.springrest.entities.course course:list)
+	//	{
+		//	if(course.getId()==courseId)
+			//{
+				//c=course;
+			//	break;
+			//}
+		
+		return course.getOne(courseId);
+	}
+
+	@Override
+	public course addCourse(course course) {
+		//list.add(course);
+		curseDao.save(course);
+		return course;
+	}
+
+	@Override
+	public course updateCourse(course course) {
+	//	list.forEach(e ->{
+		//	if(e.getId()==course.getId());
+		//	e.setTitle(course.getTitle());
+			//e.setDescription(course.getDescription());
+		//});
+		return course;
+	}
+
+	@Override
+	public void deleteCourse(long parselong) {
+		//list=this.list.stream().filter(e->e.getId()!=parselong).collect(Collectors.toList());
+		
+	}
+
+	
+	
+
+}
